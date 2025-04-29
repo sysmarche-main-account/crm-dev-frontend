@@ -1,0 +1,50 @@
+@import "./theme/commonTheme.scss";
+
+.logout-content {
+  line-height: 0;
+  text-align: left;
+}
+
+.tooltip-section-details {
+  max-width: 180px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  .logout-username {
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .logout-useremail {
+    color: #a0a0a0;
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 400;
+  }
+}
+
+.logout-button {
+  border-radius: 6px;
+  border: 1px solid rgba(244, 67, 54, 0.1);
+  background: #fff3f2;
+  color: #f44336;
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 400;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  gap: 15px;
+  width: 100%;
+  cursor: pointer;
+  padding: 6px;
+}
+.logout-button-section {
+  display: flex;
+  padding: 12px 15px 8px;
+}
+.tooltip-logout-section {
+  width: 350px;
+}

@@ -1,0 +1,236 @@
+@import "./theme/commonTheme.scss";
+
+.login-container {
+  display: flex;
+  // min-height: 100vh;
+  height: 100vh;
+  max-height: 100vh;
+  /* Use min-height instead of height to allow growth */
+  width: 100vw;
+  position: fixed;
+  /* Changed from fixed to relative */
+  overflow-x: hidden;
+  overflow-y: auto;
+  /* Enable vertical scrolling */
+  font-family: Inter;
+}
+
+.login-card {
+  // width: 350px;
+  width: 450px;
+  margin: auto;
+}
+
+.login-header {
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 40px;
+}
+
+.filled {
+  border: 2px solid #545caf !important;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: $font-weight-bold;
+  color: #484848;
+}
+
+input {
+  width: 100%;
+  max-width: 340px;
+  padding: 10px;
+  border: 1px solid #dadada;
+  border-radius: 6px;
+  box-sizing: border-box;
+  height: 40px;
+}
+
+input:hover {
+  box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.06);
+}
+
+input:focus {
+  border: 1.5px solid #545caf;
+  outline: 1.5px solid #545caf;
+}
+
+.login-button {
+  color: $login-button-color;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  max-width: 340px;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  background: $login-button-bg-gradient;
+  box-shadow: $login-button-box-shadow;
+}
+
+.login-side-content {
+  display: flex;
+}
+
+.login-side-card {
+  height: 100%;
+  background-color: #fff;
+  display: inline-block;
+}
+
+/* Remove fixed height and width for better responsiveness */
+@media screen and (min-width: 1440px) and (min-height: 1024px) {
+  .login-side-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .login-side-card {
+    padding: 10px;
+
+    img {
+      object-fit: contain;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.password-input-container {
+  position: relative;
+}
+
+.password-input-container input {
+  padding-right: 40px;
+}
+
+.eye-icon {
+  position: absolute;
+  right: 120px;
+  // right: 15px;
+  top: 55%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+}
+
+.error-message {
+  color: #ed0000;
+  font-family: Inter;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-normal;
+  line-height: 22px;
+}
+
+.input-error {
+  border: 2px solid red !important;
+  padding-right: 2.5rem;
+}
+
+.error-icon {
+  position: absolute;
+  // right: 45px;
+  right: 155px;
+  top: 40%;
+  transform: translateY(-50%);
+  fill: red;
+  pointer-events: "none";
+  width: 20px;
+  height: 20px;
+}
+
+.input-container {
+  position: relative;
+  width: 100%;
+  max-width: 340px;
+
+  input {
+    width: 100%;
+    padding-right: 40px; /* Default for email */
+    /* ... other input styles */
+  }
+
+  &.password input {
+    padding-right: 72px; /* Space for both error and visibility icons */
+  }
+
+  .error-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    /* ... error icon styles */
+  }
+
+  &.password .error-icon {
+    right: 40px; /* Position left of visibility icon */
+  }
+
+  .toggle-password-visibility {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    /* ... visibility icon styles */
+  }
+
+  /* If both error and visibility icons exist */
+  &.has-error input {
+    padding-right: 52px; /* 40px + 32px */
+  }
+}
+
+.input-container input:not(:placeholder-shown) {
+  border: 2px solid black;
+}
+
+.password-info {
+  margin: 0px 8px 18px 8px;
+  display: flex;
+  flex-direction: column;
+
+  .info-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .pass-checker-container {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+  }
+}
+
+.info-container-start {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5px;
+}
+
+@media screen and (max-width: 1060px) {
+  .login-side-content {
+    display: none;
+  }
+
+  .login-card {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  input {
+    width: 100%;
+    max-width: auto;
+  }
+}

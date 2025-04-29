@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import "./theme/commonTheme.scss";
+
+.manage-roles-container {
+  display: flex;
+  flex-direction: column;
+  border-radius: 6px;
+  border: 1px solid #C9CED3;
+  background: #FFF;
+  // height: 85vh;
+  font-family: Inter;
+
+  .manager-roles-headers {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px 0px;
+  }
+
+  .action-buttons {
+    display: flex;
+    gap: 12px;
+    position: relative;
+
+    button {
+      font-size: $font-size-sm;
+      font-weight: $font-weight-semibold;
+      border-radius: 6px;
+      border: $action-button-border-color;
+      background: $action-button-bg-gradient-default;
+      box-shadow: $action-button-box-shadow-default;
+      display: flex;
+      padding: 8px 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      font-family: Inter;
+
+    }
+
+    .action-button {
+      width: 120px;
+    }
+
+    .create-role-button {
+      width: 160px;
+      background: $create-role-button-bg-gradient;
+      box-shadow: $create-role-button-box-shadow;
+      height: 40px;
+    }
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+
+    button {
+      display: block;
+      padding: 8px 16px;
+      width: 100%;
+      background: none;
+      border: none;
+      text-align: left;
+      cursor: pointer;
+
+    }
+  }
+
+  .role-description {
+    h1 {
+      color: $text-heading-color;
+      font-size: $heading-h5-size;
+      font-weight: $font-weight-bold;
+      line-height: 10.5px;
+    }
+
+    p {
+      color: $text-muted-color;
+      font-size: $font-size-sm;
+      font-weight: $font-weight-normal;
+    }
+  }
+
+  .tabs,
+  .template_tabs {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #E7E7E7;
+    margin: 0px;
+    padding: 0px 0px;
+
+    button {
+      background: none;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      font-size: $font-size-sm;
+      font-weight: $font-weight-medium;
+      line-height: 22px;
+      font-family: Inter;
+      color: #7D7D7D;
+
+      &.active-tab {
+        border-bottom: 2px solid #5654D4;
+        font-weight: bold;
+        color: #5654D4;
+
+      }
+    }
+  }
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Semi-transparent black */
+  z-index: 999;
+  /* Ensure it covers the content behind */
+}
+
+.content {
+  text-align: center;
+  margin-top: 30px;
+
+  .illustration {
+    margin-bottom: 20px;
+  }
+
+  .message-title {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-bold;
+    margin-bottom: 10px;
+  }
+
+  .message-subtitle {
+    font-size: $font-size-sm;
+    color: #8B8B8B;
+    font-weight: $font-weight-normal;
+    margin-bottom: 48px;
+  }
+
+  .create-role-btn {
+    color: $create-role-btn-color;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    width: 340px;
+    height: 40px;
+    padding: 10px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-family: Inter;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-semibold;
+    line-height: 22px;
+    border-radius: 6px;
+    margin: auto;
+    background: $create-role-btn-bg-gradient;
+    box-shadow: $create-role-btn-box-shadow;
+  }
+}
+
+svg.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium.MuiSelect-icon.MuiSelect-iconOutlined.mui-lohd6h-MuiSvgIcon-root-MuiSelect-icon {
+  top: 6px;
+}
+
+.pagination-wrapper {
+  margin: 15px 0px 8px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 20px 0px;
+  gap: 20px;
+}
+
+.form-group-pagination {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 0px;
+
+  label {
+    font-weight: 500;
+  }
+}
+
+.pagination-buttons {
+  display: flex;
+  align-items: center;
+  text-transform: capitalize;
+
+  button {
+    color: gray;
+    border: 1px solid #ccc;
+  }
+}
+
+.pagination-button {
+  color: #ccc;
+  border: 1px solid #ccc;
+  text-transform: capitalize;
+  margin-left: 20px;
+}
+
+.mui-6r5v6t-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root {
+  color: gray !important;
+  border: 1px solid #ccc !important;
+}
+
+
+@media (max-width: 767px) {
+  .manage-roles-container {
+    .manager-roles-headers {
+      display: block;
+    }
+
+    .action-buttons {
+      display: block;
+      width: 100%;
+
+      button {
+        width: 100%;
+      }
+
+      .action-button {
+        width: 100%;
+      }
+
+      .create-role-button {
+        width: 100%;
+        margin-top: 15px;
+      }
+    }
+  }
+
+  .manage-roles-container .template_tabs {
+    margin-top: 10px;
+    gap: 0;
+  }
+
+  .manage-roles-container .template_tabs button.active-tab {
+    padding: 0;
+  }
+
+  .manage-roles-container .template_tabs button {
+    padding: 0;
+    font-size: 12px;
+  }
+
+  .pagination-wrapper {
+    .pagination-buttons {
+      display: none !important;
+
+      button {
+        display: none !important;
+      }
+    }
+  }
+
+}

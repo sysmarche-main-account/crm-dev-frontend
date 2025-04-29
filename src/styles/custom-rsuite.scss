@@ -1,0 +1,38 @@
+// $rs-primary-500: red;
+// $rs-primary-600: darkred;
+
+// :root {
+//   --rs-primary-500: #{$rs-primary-500};
+//   --rs-primary-600: #{$rs-primary-600};
+// }
+
+.rs-input-group.rs-input-group-inside {
+  height: 30px;
+  width:200px;
+
+  input {
+    height: auto;
+  }
+}
+
+.rs-btn-primary {
+  background-color:#009056 !important;
+  color: white !important;
+
+  &:hover {
+    background-color:#009056 !important;
+  }
+}
+
+.rs-calendar-table-cell-selected .rs-calendar-table-cell-content{
+    background-color:#009056 !important;
+}
+
+.rs-calendar-table-cell-in-range:before{
+    background-color: #cff8e7 !important;
+}
+
+.rs-calendar-table-cell-content:hover {
+    color: #009056 !important;
+    background-color: #cff8e7 !important;
+}

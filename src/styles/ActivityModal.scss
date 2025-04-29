@@ -1,0 +1,115 @@
+@import "./theme/commonTheme.scss";
+
+.activity-modal-container {
+  width: 740px;
+  background-color: #fff;
+  border-radius: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  position: fixed;
+  /* Fixed to the screen */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  /* Flexbox layout */
+  z-index: 5;
+
+  .modal-header-roles {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h2 {
+      font-size: $heading-h2-size;
+      font-weight: $font-weight-semibold;
+      line-height: 0;
+    }
+
+    .close-button {
+      background: none;
+      border: none;
+      font-size: $font-size-xl;
+      cursor: pointer;
+    }
+  }
+
+  .activity-modal-body {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto !important;
+    padding-right: 14px;
+    position: relative;
+    margin-bottom: 60px;
+
+    .timeline-details {
+      color: #7d7d7d;
+      font-family: Inter;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 2;
+      padding-bottom: 15px;
+      margin-top: 0px;
+    }
+
+    &.activity-modal {
+      margin-bottom: 0px;
+    }
+
+    // Scrollbar styles
+    &::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #888;
+      border-radius: 10px;
+      border: 2px solid transparent;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: #555;
+    }
+
+    &::-webkit-scrollbar-thumb:active {
+      background-color: #333;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .activity-modal-container {
+    width: 100%;
+    padding: 0px 15px;
+    top: 0%;
+    right: 0;
+    box-shadow: none;
+    bottom: 0;
+    display: flex;
+    justify-content: flex-end;
+
+    .modal-header-roles {
+      padding: 20px 25px 0px;
+
+      h2 {
+        font-size: 1.2rem;
+        padding: 0px 15px; // Adjust heading size
+      }
+
+      .close-button {
+        font-size: 1.5rem; // Make the close button larger for touch
+      }
+    }
+
+    .activity-modal-body {
+      padding: 0px 10px 0px 40px;
+    }
+  }
+}

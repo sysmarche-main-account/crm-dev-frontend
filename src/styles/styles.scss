@@ -1,0 +1,41 @@
+$font-primary: "Inter", sans-serif;
+body {
+  font-family: Inter;
+}
+// Theme files
+@import "./theme/commonTheme.scss";
+@import "./theme/darkTheme.scss";
+@import "./theme/lightTheme.scss";
+
+//other files
+@import "./ChangePassword.scss";
+@import "./CreateRoleModal.scss";
+@import "./CreateUserModal.scss";
+@import "./Header.scss";
+@import "./Layout.scss";
+@import "./Login.scss";
+@import "./ManageRoles.scss";
+@import "./ManageUsers.scss";
+@import "./MapRoles.scss";
+@import "./Profile.scss";
+@import "./RoleTable.scss";
+@import "./SideNavBar.scss";
+@import "./AssignedRolesTable.scss";
+@import "./EditUserModal.scss";
+@import "./ImportUserModal.scss";
+@import "./MapRolesModal.scss";
+@import "./ChangeOwners.scss";
+@import "./TransferLeadsModal.scss";
+@import "./LeadManagement.scss";
+@import "./CreateSingleLeadModal.scss";
+@import "./FollowUp.scss";
+@import "./LeadDetails.scss";
+@import "./custom-rsuite.scss";
+@import "./FollowUpModal.scss";
+@import "./NotificationCards.scss";
+@import "./Template.scss";
+@import "./Dashboard.scss";
+@import "./VoiceNotePlayer.scss";
+@import "./ActivityModal.scss";
+@import "./EditMaster.scss";
+@import "./DataUpdate.scss";

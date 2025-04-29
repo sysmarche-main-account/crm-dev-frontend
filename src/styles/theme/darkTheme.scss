@@ -1,0 +1,47 @@
+@import './commonTheme.scss';
+
+$background-color: #121212; 
+$background-secondary-color: #1E1E1E; 
+$background-tertiary-color: #2A2A2A; 
+
+
+$text-primary-color: #FFFFFF; 
+$text-secondary-color: #B3B3B3; 
+$text-muted-color: #777777; 
+$text-inverted-color: #000000; 
+
+
+$border-color: #333333; 
+$border-focus-color: #4CAF50; 
+
+
+$button-background-color: #4CAF50; 
+$button-background-hover-color: #388E3C; 
+$button-text-color: #FFFFFF; 
+$button-disabled-background-color: #555555; 
+$button-disabled-text-color: #999999; 
+
+
+$input-background-color: #2C2C2C; 
+$input-text-color: #FFFFFF;
+$input-placeholder-color: #AAAAAA; 
+$input-border-color: #444444; 
+$input-border-focus-color: #4CAF50; 
+
+$link-color: #1E90FF; 
+$link-hover-color: #0D47A1; 
+
+$modal-background-color: #2A2A2A; 
+$modal-overlay-color: rgba(0, 0, 0, 0.8); 
+
+$box-shadow-light: 0 1px 3px rgba(0, 0, 0, 0.2); 
+$box-shadow-heavy: 0 4px 8px rgba(0, 0, 0, 0.3); 
+
+$success-color: #4CAF50; 
+$warning-color: #FFC107; 
+$error-color: #F44336; 
+
+
+$toggle-on-color: #4CAF50; 
+$toggle-off-color: #666666; 
+$divider-color: #2E2E2E;

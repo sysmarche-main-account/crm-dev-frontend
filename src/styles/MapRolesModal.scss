@@ -1,0 +1,451 @@
+@import "./theme/commonTheme.scss";
+
+.map-roles-modal-wrapper {
+  width: 740px;
+  background-color: #fff;
+  border-radius: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  position: fixed;
+  /* Fixed to the screen */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  /* Flexbox layout */
+  z-index: 2;
+
+  button,
+  .map-role-button {
+    font-size: $font-size-sm;
+    font-weight: $font-weight-semibold;
+    border-radius: 6px;
+    border: $button-border-color;
+    background: $button-bg-gradient-default;
+    box-shadow: $button-box-shadow-default;
+    display: flex;
+    padding: 8px 18px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-family: Inter;
+    text-transform: capitalize;
+    color: $button-text-color;
+  }
+
+  .map-role-button {
+    width: 120px;
+    background: $map-role-button-bg-gradient;
+    box-shadow: $map-role-button-box-shadow;
+  }
+
+  .modal-header-roles {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h2 {
+      font-size: $heading-h2-size;
+      font-weight: $font-weight-semibold;
+      line-height: 0;
+    }
+
+    .close-button {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+  }
+
+  .modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .modal-body-content {
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 20px;
+    }
+
+    .edit-map-modal-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20;
+    }
+
+    .role-label {
+      color: #484848;
+      font-size: $font-size-sm;
+      font-weight: $font-weight-semibold;
+      line-height: 22px;
+    }
+
+    .map-role-item {
+      color: #c9c9c9;
+      font-size: $font-size-sm;
+      font-weight: $font-weight-normal;
+      line-height: 22px;
+    }
+
+    .user-selection {
+      display: block;
+      flex-direction: column;
+      gap: 12px;
+
+      .user-selection-content {
+        display: flex;
+        height: 100vh;
+        padding-right: 10px;
+      }
+
+      .search-select-all {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .search-box {
+          display: flex;
+          align-items: center;
+          // margin: 20px 0;
+
+          input {
+            padding: 8px 12px;
+            width: 340px;
+            height: 40px;
+            border-radius: 8px;
+            border: 1px solid #d2d2d2;
+            font-size: $font-size-sm;
+            font-weight: $font-weight-normal;
+          }
+
+          .search-icon {
+            background: none;
+            border: none;
+            font-size: $font-size-md;
+            margin-left: -40px;
+            cursor: pointer;
+          }
+        }
+
+        .select-all-button {
+          background-color: $select-all-button-bg-color;
+          color: $select-all-button-text-color;
+          border: none;
+          padding: 8px 16px;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+      }
+
+      .user-list {
+        padding: 8px;
+        width: 50%;
+
+        .user-item-wrapper {
+          height: 100%;
+          max-height: 50vh;
+          overflow-y: auto;
+          padding-bottom: 0px;
+          flex-wrap: nowrap;
+
+          // WebKit scrollbar styles
+          &::-webkit-scrollbar {
+            width: 5px;
+            height: 5px;
+          }
+
+          &::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            /* Scrollbar track color */
+            border-radius: 10px;
+          }
+
+          &::-webkit-scrollbar-thumb {
+            background-color: #888;
+            /* Scrollbar thumb color */
+            border-radius: 10px;
+            border: 2px solid transparent;
+            /* Adds padding between thumb and track */
+          }
+
+          &::-webkit-scrollbar-thumb:hover {
+            background-color: #555;
+            /* Darker thumb on hover */
+          }
+
+          &::-webkit-scrollbar-thumb:active {
+            background-color: #333;
+            /* Darker thumb when clicked */
+          }
+        }
+
+        .user-item {
+          display: flex;
+          justify-content: space-between;
+          padding: 8px 0;
+          align-items: center;
+
+          span {
+            font-size: 1rem;
+          }
+
+          input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+          }
+        }
+
+        .selected-user-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+      }
+
+      .selected-user-list {
+        border: 1px solid #dbdbdb;
+        border-radius: 10px;
+        background-color: #f9f9f9;
+        padding: 8px;
+        width: 50%;
+        height: 420px;
+
+        .user-item {
+          display: flex;
+          justify-content: space-between;
+          padding: 8px 0;
+          align-items: center;
+
+          span {
+            font-size: 1rem;
+          }
+
+          input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+          }
+        }
+
+        .selected-user-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+      }
+
+      .selected-user-list.bg-empty {
+        background-image: url("/images/User_empty.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 200px 200px;
+      }
+    }
+  }
+
+  .modal-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 0px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    background-color: white;
+
+    .cancel-button {
+      color: #7d7d7d;
+      background-color: #eee;
+      margin-right: auto;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .map-button {
+      background-color: $map-button-bg-color;
+      color: $map-button-text-color;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      color: #000;
+    }
+  }
+}
+
+.user-item-wrapper-listing {
+  height: 100%;
+  max-height: 50vh;
+  overflow-y: auto;
+  padding-bottom: 0px;
+  flex-wrap: nowrap !important;
+
+  // WebKit scrollbar styles
+  &::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    /* Scrollbar track color */
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #888;
+    /* Scrollbar thumb color */
+    border-radius: 10px;
+    border: 2px solid transparent;
+    /* Adds padding between thumb and track */
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+    /* Darker thumb on hover */
+  }
+
+  &::-webkit-scrollbar-thumb:active {
+    background-color: #333;
+    /* Darker thumb when clicked */
+  }
+}
+
+@media (max-width: 768px) {
+  .map-roles-modal-wrapper {
+    width: auto;
+  }
+  .map-roles-modal-wrapper
+    .modal-body
+    .user-selection
+    .selected-user-list
+    .selected-user-header {
+    display: block;
+    align-items: center;
+    text-align: center;
+    button {
+      width: 100%;
+    }
+  }
+  .map-roles-modal {
+    width: auto; // Full width for mobile
+    padding: 20px; // Reduce padding
+    top: 0;
+    right: 0;
+    height: 100%; // Ensure the modal takes full height
+    box-shadow: none; // Reduce shadow for smaller screens
+    border-radius: 0;
+
+    button,
+    .map-role-button {
+      font-size: 14px; // Smaller font size for buttons
+      padding: 10px; // Adjust padding for buttons
+      width: 100%; // Make buttons full width on mobile
+      gap: 5px; // Reduce the gap between button elements
+    }
+
+    .modal-header-roles {
+      h2 {
+        font-size: 20px; // Smaller heading size
+      }
+
+      .close-button {
+        font-size: 1.25rem; // Adjust close button size
+      }
+    }
+
+    .modal-body {
+      gap: 12px; // Reduce the gap between elements\
+
+      .modal-body-content {
+        display: block;
+      }
+
+      .edit-map-modal-content {
+        display: block;
+      }
+
+      .role-label,
+      .map-role-item {
+        font-size: 12px; // Smaller font size for mobile
+      }
+
+      .user-selection {
+        .user-selection-content {
+          display: block;
+        }
+
+        .search-select-all {
+          flex-direction: column; // Stack search and select-all vertically
+          align-items: flex-start; // Align elements to the left
+
+          .search-box {
+            width: 100%; // Make search box full width on mobile
+            margin: 10px 0;
+
+            input {
+              width: 100%; // Make input field take full width
+            }
+          }
+
+          .select-all-button {
+            width: 100%; // Full width select-all button
+            margin-top: 10px; // Add some spacing above button
+          }
+        }
+
+        .user-list,
+        .selected-user-list {
+          width: 100%; // Full width for user lists
+          padding: 0; // Remove padding for lists on mobile
+          padding: 20px;
+
+          .selected-user-header {
+            display: block;
+          }
+
+          .user-item {
+            justify-content: space-between;
+            padding: 8px 0;
+
+            span {
+              font-size: 0.9rem; // Adjust font size for items
+            }
+          }
+        }
+      }
+    }
+
+    .modal-footer {
+      flex-direction: column; // Stack footer buttons vertically
+      gap: 10px; // Add gap between footer buttons
+      margin-top: 15px;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+
+      .cancel-button,
+      .map-button {
+        width: 100%; // Make footer buttons full width
+        padding: 12px; // Adjust padding for larger click area
+      }
+    }
+  }
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Semi-transparent black */
+  z-index: 999;
+  /* Ensure it covers the content behind */
+}

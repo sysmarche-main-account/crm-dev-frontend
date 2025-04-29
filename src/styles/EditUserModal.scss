@@ -1,0 +1,334 @@
+@import "./theme/commonTheme.scss";
+
+body {
+  font-family: Inter;
+}
+
+/* Global Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.edit-user-modal {
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: auto;
+  height: auto;
+  // padding-bottom: 50px;
+  // padding-right: 45px;
+
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    h2 {
+      margin: 0;
+      font-size: $heading-h2-size;
+      font-style: normal;
+      font-weight: $font-weight-semibold;
+    }
+
+    .close-icon {
+      font-size: $font-size-xl;
+      font-weight: $font-weight-bold;
+      cursor: pointer;
+      padding: 8px;
+
+      &:hover {
+        color: $close-icon-hover-color;
+      }
+    }
+  }
+
+  .edit-profile-pic-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0px;
+    padding: 0px 15px 15px 0px;
+    border-bottom: 1px solid #ccc;
+
+    .avatar-div {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      button {
+        border-radius: 6px;
+        background: #eee;
+        color: #7d7d7d;
+        font-family: Inter;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 22px;
+        border: none;
+        padding: 8px 18px;
+        font-family: Inter;
+      }
+
+      .avatar-confirm-button {
+        font-weight: 600;
+        color: #fff;
+        background: linear-gradient(
+          180deg,
+          #f92828 0%,
+          #f92c2c 79.91%,
+          #ff5353 100%
+        );
+        box-shadow: 0px 0px 2px 1.5px rgba(255, 255, 255, 0.1) inset,
+          0px -2px 2px 0.5px #900000 inset;
+      }
+    }
+
+    .avatar-profile {
+      width: 72px;
+      height: 72px;
+    }
+  }
+
+  .form-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 0px;
+
+      label {
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #484848;
+        font-size: $font-size-sm;
+        font-weight: $font-weight-semibold;
+      }
+
+      input,
+      select {
+        padding: 8px;
+        font-size: $font-size-md;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background-color: #e6e2e2;
+      }
+    }
+
+    .selected-university-list {
+      border: 1px solid #dbdbdb;
+      border-radius: 10px;
+      background-color: #f9f9f9;
+      padding: 8px;
+      max-width: 720px;
+      width: 100%;
+      min-height: fit-content;
+      box-sizing: border-box;
+      grid-column: span 2;
+
+      &.bg-empty {
+        background-image: url("/images/User_empty.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 200px 200px;
+      }
+    }
+  }
+
+  .assigned-roles-section {
+    margin-top: 50px;
+
+    div {
+      display: flex;
+      justify-content: space-between;
+      width: 600px;
+      flex-wrap: wrap;
+      /* Allow wrapping on smaller screens */
+    }
+
+    h3 {
+      font-size: $heading-h3-size;
+      margin-bottom: 10px;
+      color: #7d7d7d;
+      font-size: $heading-h6-size;
+      font-weight: $font-weight-semibold;
+    }
+
+    .assigned-role {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+      border-bottom: 1px solid #ccc;
+      padding: 20px 150px 15px 10px;
+
+      .role-arrow {
+        margin: 0 10px;
+        font-size: $font-size-xl;
+      }
+
+      .role-badge {
+        background-color: #e0e0e0;
+        padding: 4px 10px;
+        border-radius: 4px;
+        font-size: $font-size-lg;
+      }
+    }
+  }
+
+  .modal-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 80px;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+
+    button {
+      padding: 10px 20px;
+      font-size: 1em;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+
+      &.cancel-button {
+        background-color: $cancel-btn-bg-color;
+        border: $cancel-btn-border-color;
+        color: $cancel-button-text-color;
+      }
+
+      &.save-button {
+        background: $button-save-bg-gradient;
+        box-shadow: $button-save-box-shadow;
+        color: $save-btn-text-color;
+      }
+    }
+  }
+
+  .edit-header-label {
+    color: #7d7d7d;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 25px;
+  }
+}
+
+/* Scrollbar Styles */
+.edit-user-modal::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.edit-user-modal::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.edit-user-modal::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+  border: 2px solid transparent;
+}
+
+.edit-user-modal::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+.edit-user-modal::-webkit-scrollbar-thumb:active {
+  background-color: #333;
+}
+
+/* Additional Responsive Styles Below 768px */
+@media (max-width: 768px) {
+  .edit-user-modal {
+    width: 90%;
+    /* Reduce modal width */
+    padding: 15px;
+    /* Reduce padding */
+    border-radius: 6px;
+
+    .modal-header {
+      flex-direction: row;
+      align-items: flex-start;
+
+      h2 {
+        font-size: $heading-h3-size;
+        /* Reduce font size */
+        margin-bottom: 10px;
+      }
+
+      .close-icon {
+        align-self: flex-end;
+        padding: 5px;
+      }
+    }
+
+    .form-section {
+      grid-template-columns: 1fr;
+      /* Single column layout */
+      gap: 15px;
+
+      .form-group {
+        label {
+          font-size: $font-size-xs;
+          /* Smaller labels */
+        }
+
+        input,
+        select {
+          font-size: $font-size-sm;
+          padding: 6px;
+        }
+      }
+    }
+
+    .assigned-roles-section {
+      div {
+        width: 100%;
+        /* Full width */
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .assigned-role {
+        padding: 15px 10px 10px 5px;
+        /* Reduce padding */
+        flex-direction: column;
+        align-items: flex-start;
+
+        .role-arrow {
+          margin: 5px 0;
+          font-size: $font-size-lg;
+        }
+
+        .role-badge {
+          font-size: $font-size-md;
+        }
+      }
+    }
+
+    .modal-actions {
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 60px;
+
+      button {
+        width: 100%;
+        /* Full-width buttons */
+        padding: 10px 0;
+        font-size: $font-size-sm;
+      }
+    }
+  }
+}

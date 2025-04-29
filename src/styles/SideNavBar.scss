@@ -1,0 +1,324 @@
+@import "./theme/commonTheme.scss";
+
+// .sidebar {
+//   width: 291px;
+//   background-color: #fff;
+//   border-right: 1px solid #e0e0e0;
+//   height: 100vh;
+
+//   .sidebar-header {
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     padding: 0px 20px;
+
+//     h2 {
+//       color: $text-heading-color;
+//       font-size: $heading-h3-size;
+//       font-weight: $font-weight-bold;
+//       line-height: 20px;
+//     }
+
+//     .back-button {
+//       background: none;
+//       border: none;
+//       font-size: 20px;
+//       cursor: pointer;
+//       margin-top: 10px;
+//     }
+//   }
+
+//   .search-box {
+//     display: flex;
+//     align-items: center;
+//     margin: 20px 0;
+//     padding: 0px 20px;
+
+//     input {
+//       padding: 8px;
+//       width: 280px;
+//       height: 32px;
+//       border-radius: 200px;
+//       border: 1px solid #D2D2D2;
+//     }
+
+//     .search-icon {
+//       background: none;
+//       border: none;
+//       font-size: $font-size-md;
+//       margin-left: -30px;
+//       cursor: pointer;
+//     }
+//   }
+
+//   .sidebar-menu {
+//     list-style: none;
+//     padding: 0;
+//     margin: 0;
+//     height: 72vh;
+//     overflow-y: auto;
+//     overflow-x: hidden;
+
+//     /* Scrollbar Styles with Increased Specificity */
+//     &::-webkit-scrollbar {
+//       width: 5px;
+//       height: 5px;
+//     }
+
+//     &::-webkit-scrollbar-track {
+//       background: #f1f1f1;
+//       border-radius: 10px;
+//     }
+
+//     &::-webkit-scrollbar-thumb {
+//       background-color: transparent;
+//       border-radius: 10px;
+//       border: 2px solid transparent;
+//     }
+
+//     &::-webkit-scrollbar-thumb:hover {
+//       background-color: #555;
+//     }
+
+//     &::-webkit-scrollbar-thumb:active {
+//       background-color: #333;
+//     }
+
+//     li {
+//       padding: 8px;
+//       display: flex;
+//       align-items: center;
+//       font-size: $font-size-md;
+//       cursor: pointer;
+//       color: #555;
+//       transition: background-color 0.3s ease;
+//       margin-bottom: 5px;
+
+//       span {
+//         padding: 8px;
+//         margin-left: 20px;
+//       }
+
+//       &:hover {
+//         background-color: #E6F5F0;
+//       }
+
+//       &.active {
+//         background-color: #CCF2E2;
+//         color: #007143;
+//         font-weight: 500;
+//       }
+//     }
+//   }
+// }
+
+// .sidebar {
+//   &.compact {
+//     width: 80px;
+
+//     .sidebar-header,
+//     .search-box {
+//       display: none;
+//     }
+
+//     .sidebar-menu {
+//       overflow-y: scroll;
+//       height: 85vh !important;
+//       padding-bottom: 40px;
+
+//       li {
+//         justify-content: center;
+//       }
+
+//       span {
+//         margin-right: 0 !important;
+//         padding: 8px;
+//         width: 80px;
+//         margin-left: 10px;
+//       }
+
+//       &.active {
+//         margin: 0px !important;
+//         padding: 8px;
+//         width: 80px;
+//       }
+//     }
+
+//     .menu-icon-wrapper {
+//       display: flex;
+//       justify-content: center;
+//       padding: 10px 0;
+//     }
+//   }
+// }
+
+// @media (max-width: 768px) {
+//   .sidebar {
+//     width: 320px;
+//   }
+// }
+
+.sidebar {
+  width: 280px;
+  background-color: #fff;
+  border-right: 1px solid #e0e0e0;
+  // height: 100vh; // Full viewport height
+  height: calc(100vh - 80px); // Full viewport height
+  display: flex;
+  flex-direction: column; // Stack children vertically
+
+  .sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+    height: 60px; // Fixed height for header
+    flex-shrink: 0; // Prevent shrinking
+
+    h2 {
+      color: $text-heading-color;
+      font-size: $heading-h3-size;
+      font-weight: $font-weight-bold;
+      line-height: 20px;
+    }
+
+    .back-button {
+      background: none;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+  }
+
+  .search-box {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    padding: 0px 20px;
+    height: 60px; // Fixed height for search box
+    flex-shrink: 0; // Prevent shrinking
+
+    input {
+      padding: 8px;
+      width: 280px;
+      height: 32px;
+      border-radius: 200px;
+      border: 1px solid #d2d2d2;
+    }
+
+    .search-icon {
+      background: none;
+      border: none;
+      font-size: $font-size-md;
+      margin-left: -30px;
+      cursor: pointer;
+    }
+  }
+
+  .sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow-y: auto; // Enable vertical scrolling
+    overflow-x: hidden; // Disable horizontal scrolling
+    flex-grow: 1; // Take up remaining space
+    height: calc(
+      100vh - 140px
+    ); // Adjust height dynamically (header + search box + padding)
+
+    /* Scrollbar Styles */
+    &::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: transparent;
+      border-radius: 10px;
+      border: 2px solid transparent;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: #555;
+    }
+
+    &::-webkit-scrollbar-thumb:active {
+      background-color: #333;
+    }
+
+    li {
+      padding: 8px;
+      display: flex;
+      align-items: center;
+      font-size: $font-size-md;
+      cursor: pointer;
+      color: #555;
+      transition: background-color 0.3s ease;
+      margin-bottom: 5px;
+
+      span {
+        padding: 8px;
+        margin-left: 20px;
+      }
+
+      &:hover {
+        background-color: #e6f5f0;
+      }
+
+      &.active {
+        background-color: #ccf2e2;
+        color: #007143;
+        font-weight: 500;
+      }
+    }
+  }
+
+  &.compact {
+    width: 80px;
+
+    .sidebar-header,
+    .search-box {
+      display: none;
+    }
+
+    .sidebar-menu {
+      height: calc(100vh - 40px) !important; // Adjust height for compact mode
+      padding-bottom: 40px;
+
+      li {
+        justify-content: center;
+      }
+
+      span {
+        margin-right: 0 !important;
+        padding: 8px;
+        width: 80px;
+        margin-left: 10px;
+      }
+
+      &.active {
+        margin: 0px !important;
+        padding: 8px;
+        width: 80px;
+      }
+    }
+
+    .menu-icon-wrapper {
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 320px;
+  }
+}

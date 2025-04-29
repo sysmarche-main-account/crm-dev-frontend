@@ -1,0 +1,260 @@
+@import "./theme/commonTheme.scss";
+.map-roles-modal {
+  width: 740px;
+  background-color: #fff;
+  border-radius: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  position: fixed; /* Fixed to the screen */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column; /* Flexbox layout */
+  overflow-y: auto;
+  z-index: 1;
+
+  button, .map-role-button{
+    font-size: $font-size-sm;
+    font-weight:$font-weight-semibold;
+    border-radius: 6px;
+    border: 1px solid #E1E1E1;
+    background: linear-gradient(180deg, #F8F8F8 0%, #FEFEFE 100%);
+    box-shadow: 0px 0px 2px 0px #FCFCFC inset, 0px -1px 1px 1px #B0B0B0 inset;
+    display: flex;
+    padding:8px 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-family: Inter;
+    text-transform: capitalize;
+    color: #000;
+  }
+  .map-role-button{
+    width: 120px;
+    background: linear-gradient(180deg, #00BC70 0%, #06C175 79.91%, #20D48B 100%);
+    box-shadow: 0px 0px 2px 1.5px rgba(255, 255, 255, 0.10) inset, 0px -2px 2px 0.5px #009056 inset;
+  }
+
+  .modal-header-roles {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h2 {
+      font-size: 28px;
+      font-weight: 600;
+      line-height: 0;
+    }
+
+    .close-button {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+  }
+
+  .modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .role-label {
+      color: #484848;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 22px;
+    }
+
+    .map-role-item {
+      color: #C9C9C9;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 22px;
+    }
+
+    .user-selection {
+      display: block;
+      flex-direction: column;
+      gap: 12px;
+
+      .search-select-all {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .search-box {
+          display: flex;
+          align-items: center;
+          // margin: 20px 0;
+
+          input {
+            padding: 8px 12px;
+            width: 340px;
+            height: 40px;
+            border-radius: 8px;
+            border: 1px solid #D2D2D2;
+            font-size: 14px;
+            font-weight: 400;
+          }
+
+          .search-icon {
+            background: none;
+            border: none;
+            font-size: $font-size-md;
+            margin-left: -40px;
+            cursor: pointer;
+          }
+
+        }
+
+        .select-all-button {
+          background-color: #007bff;
+          color: #fff;
+          border: none;
+          padding: 8px 16px;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+      }
+      .user-list {
+        padding: 8px;
+        width: 50%;
+
+        .user-item {
+          display: flex;
+          justify-content: space-between;
+          padding: 8px 0;
+          align-items: center;
+
+          span {
+            font-size: 1rem;
+          }
+
+          input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+          }
+        }
+      }
+    }
+  }
+
+  .modal-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 20px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: flex-end;
+    border-top: 1px solid #ccc;
+    width: 100%;
+
+    .cancel-button {
+      background-color: #ccc;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .map-button {
+      background-color: #28a745;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      color: #000 ;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .map-roles-modal {
+    width: 100%;
+    padding: 15px;
+    box-shadow: none;
+
+    button, .map-role-button {
+      font-size: 14px;  // Adjust font size for better readability
+      padding: 10px;
+      width: 100%;  // Make buttons full-width for mobile
+    }
+
+    .modal-header-roles {
+      h2 {
+        font-size: 22px;  // Reduce font size for header
+      }
+
+      .close-button {
+        font-size: 1.25rem;  // Adjust close button size for mobile
+      }
+    }
+
+    .modal-body {
+      gap: 12px;  // Reduce gap between elements
+
+      .role-label, .map-role-item {
+        font-size: 12px;  // Adjust font size
+      }
+
+      .user-selection {
+        .search-select-all {
+          flex-direction: column;  // Stack search box and select-all button vertically
+          align-items: flex-start;
+
+          .search-box {
+            width: 100%;  // Make search input take full width on mobile
+            input {
+              width: 100%;  // Full width search input
+            }
+          }
+
+          .select-all-button {
+            width: 100%;  // Full width button
+            margin-top: 10px;  // Add spacing between elements
+          }
+        }
+
+        .user-list {
+          width: 100%;  // Full width for user list
+          padding: 0;  // Remove padding for mobile
+
+          .user-item {
+            justify-content: space-between;
+            padding: 8px 0;
+            
+            span {
+              font-size: 0.9rem;  // Adjust font size
+            }
+
+            input[type="checkbox"] {
+              width: 16px;
+              height: 16px;
+            }
+          }
+        }
+      }
+    }
+
+    .modal-footer {
+      flex-direction: column;  // Stack buttons vertically
+      gap: 10px;  // Add gap between buttons
+      margin-top: 15px;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+
+      .cancel-button, .map-button {
+        width: 100%;  // Full width buttons for better touch interaction
+        padding: 12px;  // Adjust padding for larger clickable area
+      }
+    }
+  }
+}

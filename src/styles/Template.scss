@@ -1,0 +1,158 @@
+.tox .tox-statusbar__right-container {
+  display: none !important;
+}
+
+.tox .tox-statusbar {
+  display: none !important;
+}
+
+.email-templates {
+  height: 85vh;
+}
+
+.email-template-modal {
+  padding: 10px 25px;
+  border-radius: 8px;
+  font-family: Inter;
+  height: 85vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  /* Scrollbar Styles with Increased Specificity */
+  &::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+    border: 2px solid transparent;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+  }
+
+  &::-webkit-scrollbar-thumb:active {
+    background-color: #333;
+  }
+
+  .modal-content-email-template {
+    .form-group {
+      margin-bottom: 20px;
+
+      .role-label {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .go-back-section {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+
+    .go-back-icon {
+      border-radius: 6px;
+      border: 1px solid #e0e0e0;
+      background: #fff;
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+    }
+
+    p {
+      font-size: 16px;
+      font-weight: 400;
+    }
+  }
+}
+
+.modal-footer-email-template {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px;
+  display: flex;
+
+  .filesDiv {
+    max-width: 900px;
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    gap: 5px;
+    margin: 5px 0;
+  }
+
+  .submitBtnsDiv {
+    min-width: 275px;
+    display: flex;
+    flex: 2;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    text-transform: capitalize;
+    font-family: Inter;
+    font-weight: $font-weight-semibold;
+
+    &.save-create-btn {
+      border: $button-save-create-border-color;
+      color: $button-save-create-text-color;
+      background: $button-save-create-bg-gradient;
+      box-shadow: $button-save-create-box-shadow;
+      margin-right: 10px;
+    }
+
+    &.save-btn {
+      background: $button-save-bg-gradient;
+      box-shadow: $button-save-box-shadow;
+      color: $save-btn-text-color;
+      border: none;
+      width: 120px;
+    }
+  }
+}
+.ql-tooltip.ql-hidden {
+  display: none !important;
+}
+.email-templates {
+  display: flex;
+  flex-direction: column;
+  border-radius: 6px;
+  border: 1px solid #c9ced3;
+  background: #fff;
+  height: 85vh;
+  font-family: Inter;
+}
+
+@media (max-width: 767px) {
+  .modal-content-email-template {
+    form {
+      div {
+        display: block !important;
+      }
+    }
+  }
+  .modal-footer-email-template button.save-create-btn {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .modal-footer-email-template button.save-btn {
+    width: 100%;
+  }
+}

@@ -1,0 +1,156 @@
+@import "./theme/commonTheme.scss";
+
+.assigned-roles-table {
+  padding: 0px;
+  background-color: white;
+  border-radius: 8px;
+
+  .table-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 16px;
+    align-items: center;
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      margin: 20px 0;
+
+      input {
+        padding: 8px 12px;
+        width: 256px;
+        height: 32px;
+        border-radius: 8px;
+        border: 1px solid #D2D2D2;
+      }
+
+      .search-icon {
+        background: none;
+        border: none;
+        font-size: $font-size-md;
+        margin-left: -30px;
+        cursor: pointer;
+      }
+
+    }
+
+    .search-input {
+      width: 300px;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .filter-button {
+      display: flex;
+      width: 93px;
+      height: 32px;
+      padding: 8px;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      border-radius: 6px;
+      border: $filter-button-border-color;
+      background-color: $filter-button-bg-color;
+      font-size: $font-size-sm;
+      cursor: pointer;
+    }
+  }
+
+  .assigned-users {
+    display: flex;
+    align-items: center;
+
+    .user-avatar {
+      width: 32px;
+      height: 32px;
+      margin-right: 4px;
+      background-color: #f0c040;
+      color: #fff;
+    }
+
+    .more-users {
+      cursor: pointer;
+      font-size: 12px;
+      color: #888;
+    }
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+
+    th {
+      border-top: 0.5px solid #000;
+      border-bottom: 0.5px solid #000;
+      border-left: 0.5px solid #000;
+      background: #F8F2E3;
+    }
+
+    th,
+    td {
+      padding: 5px 15px;
+      text-align: left;
+      border: 1px solid #C1C1C1;
+      font-family: Inter;
+      font-size: $font-size-sm;
+      font-weight: $font-weight-medium;
+      line-height: 22px;
+    }
+
+    th {
+      font-weight: 800 !important;
+      color: #333;
+      padding: 5px 15px;
+      font-family: Inter;
+      font-size: $font-size-sm;
+      line-height: 22px;
+    }
+
+    tbody tr:hover {
+      background-color: #f1f1f1;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .assigned-roles-table {
+    height: 55vh;
+    overflow-x: hidden;
+    overflow-y: scroll !important;
+
+    .table-header {
+      .search-box {
+        input {
+          width: 200px
+        }
+      }
+    }
+
+
+    &::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: transparent;
+      border-radius: 10px;
+      border: 2px solid transparent;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: #555;
+    }
+
+    &::-webkit-scrollbar-thumb:active {
+      background-color: #333;
+    }
+
+  }
+}

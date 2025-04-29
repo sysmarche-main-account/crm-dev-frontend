@@ -1,0 +1,319 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import "./theme/commonTheme.scss";
+
+body {
+  font-family: Inter;
+}
+
+.profile {
+  padding: 40px 120px;
+  background-color: #fff;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-family: Inter;
+  // height: 73vh;
+  height: auto;
+  overflow: hidden;
+  // overflow-y: scroll;
+  // overflow-x: hidden;
+
+  /* Scrollbar Styles with Increased Specificity */
+  &::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+    border: 2px solid transparent;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+  }
+
+  &::-webkit-scrollbar-thumb:active {
+    background-color: #333;
+  }
+
+  .profile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .profile-pic {
+      // background-color: #c6f690;
+      // color: #000;
+      font-weight: $font-weight-bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
+
+    .profile-details {
+      margin-left: 16px;
+
+      h2 {
+        font-size: $heading-h6-size;
+        font-weight: $font-weight-semibold;
+        line-height: 0;
+      }
+
+      p {
+        color: $text-muted-color;
+        font-size: $font-size-sm;
+        font-weight: $font-weight-normal;
+        line-height: 1;
+      }
+    }
+
+    .profile-actions {
+      display: flex;
+      gap: 10px;
+
+      .btn {
+        width: 154px;
+        height: auto;
+        font-size: $font-size-sm;
+        font-weight: $font-weight-normal;
+        border-radius: 6px;
+        border: $btn-border-color;
+        background: $button-bg-gradient-default;
+        box-shadow: $action-button-box-shadow-default;
+        display: flex;
+        padding: 12px 12px;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        cursor: pointer;
+
+        &.btn-delete {
+          background: $button-bg-gradient-default;
+          // background: $btn-delete-bg-color;
+          width: 100px;
+          // color: $btn-delete-text-color;
+          color: #000;
+        }
+      }
+    }
+  }
+
+  hr {
+    margin: 34px 0;
+    border: none;
+    border-top: 1px solid #e0e0e0;
+  }
+
+  .personal-details {
+    .personal-details-content {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      justify-content: space-between;
+    }
+
+    h3 {
+      font-size: $heading-h6-size;
+      font-weight: $font-weight-semibold;
+    }
+
+    .btn-edit {
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      border-radius: 6px;
+      border: $btn-edit-border;
+      background: $btn-edit-bg-gradient;
+      box-shadow: $btn-edit-box-shadow;
+    }
+
+    form {
+      display: flex;
+      flex-wrap: wrap;
+
+      .form-group {
+        flex: 1 1 calc(50% - 20px);
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 24px;
+
+        label {
+          margin-bottom: 5px;
+          font-weight: bold;
+          color: #484848;
+          font-family: Inter;
+          font-size: $font-size-sm;
+          font-weight: $font-weight-semibold;
+          line-height: 22px;
+        }
+
+        input,
+        select {
+          padding: 10px;
+          border-radius: 4px;
+          border-radius: 6px;
+          border: 1px solid #dadada;
+          width: 340px;
+          height: 46px;
+          display: flex;
+          padding: 10px 12px;
+          align-items: center;
+          gap: 10px;
+          font-family: Inter;
+        }
+      }
+
+      .dropdown-placeholder {
+        color: #c9c9c9;
+        font-size: $font-size-sm;
+        font-weight: $font-weight-normal;
+        line-height: 22px;
+      }
+    }
+  }
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+
+  .main-content {
+    display: flex;
+    flex-grow: 1;
+    background-color: #f3f4f7;
+  }
+}
+
+.manager-option {
+  display: flex;
+  align-items: center;
+
+  .manager-initials {
+    display: block;
+    border-radius: 50%;
+    font-size: $font-size-md;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    margin-right: 10px;
+    padding: 8px;
+  }
+}
+
+.action-btns {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-top: 20px;
+
+  button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .cancel-button {
+    // background-color: #e0e0e0;
+    background-color: #eeeeee;
+    color: #7d7d7d;
+    // color: #000;
+    border: none;
+    width: 100px;
+    font-size: 14px;
+    font-family: Inter;
+    font-weight: 400;
+  }
+
+  .confirm-button {
+    background: linear-gradient(
+      180deg,
+      #00bc70 0%,
+      #06c175 79.91%,
+      #20d48b 100%
+    );
+    box-shadow: 0px 0px 2px 1.5px rgba(255, 255, 255, 0.1) inset,
+      0px -2px 2px 0.5px #009056 inset;
+    color: #000;
+    border: none;
+    width: 100px;
+    font-size: 14px;
+    font-family: Inter;
+    font-weight: 600;
+  }
+}
+
+.uni-chips {
+  color: #29339b;
+  font-size: 14px;
+  cursor: pointer;
+  margin-left: 15px;
+  padding: 3px 3px;
+  background-color: transparent;
+  transition: background-color 0.3s;
+}
+
+.uni-chips:hover {
+  border-radius: 5px;
+  background-color: rgba(128, 128, 128, 0.504); /* Change background on hover */
+}
+
+@media screen and (max-width: 800px) {
+  .profile {
+    .profile-header {
+      display: block;
+    }
+  }
+}
+/* Medium screens (e.g., tablets, iPads) */
+@media (max-width: 767px) {
+  .profile {
+    padding: 25px;
+    box-shadow: none;
+    height: fit-content;
+
+    .profile-header {
+      display: block;
+
+      .profile-actions {
+        display: block;
+        margin-top: 20px;
+        justify-content: space-between;
+
+        .btn {
+          width: 100%;
+
+          &.btn-delete {
+            width: 100%;
+            margin-top: 10px;
+          }
+        }
+      }
+    }
+    .personal-details {
+      form {
+        .form-group {
+          input,
+          select {
+            width: 200px;
+          }
+        }
+      }
+    }
+  }
+
+  .action-btns {
+    justify-content: space-between;
+  }
+}

@@ -1,0 +1,44 @@
+
+@media (min-width: $breakpoint-sm) {
+    body {
+      font-size: $font-size-md;
+      padding: $padding-medium;
+    }
+  }
+  
+  @media (min-width: $breakpoint-md) {
+    body {
+      font-size: $font-size-lg;
+      padding: $padding-medium;
+    }
+  }
+
+  button {
+    padding: $button-padding;
+  
+    @media (max-width: $breakpoint-xs) {
+      padding: 0.4rem 0.8rem;
+    }
+  
+    @media (min-width: $breakpoint-md) {
+      padding: 0.6rem 1.2rem;
+    }
+  }
+  table {
+    border-collapse: $table-border-collapse;
+    width: 100%;
+    padding: $table-padding;
+  
+    @media (max-width: $breakpoint-sm) {
+      padding: $padding-small;
+    }
+  }
+  
+  th, td {
+    padding: $padding-small;
+  
+    @media (min-width: $breakpoint-md) {
+      padding: $padding-medium;
+    }
+  }
+    
