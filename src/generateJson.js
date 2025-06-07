@@ -79,7 +79,7 @@ const generateJson = async () => {
         let dataLabel;
         try {
           const res = await axios.post(
-            `https://devcrmapi.digivarsity.com/common/get_label_list`
+            `https://crm-backend.jitendrapatwa.com/common/get_label_list`
           );
           console.log("labels", res);
           dataLabel = transformData(res.data);

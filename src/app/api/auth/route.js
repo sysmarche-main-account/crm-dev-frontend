@@ -43,6 +43,11 @@ export const POST = async (req) => {
 
     let res;
     if (customRequire === "login") {
+      console.log("login api call", process.env.BACKEND_URL_DEV);
+      console.info("ilogin api call", process.env.BACKEND_URL_DEV);
+      console.warn("wlogin api call", process.env.BACKEND_URL_DEV);
+      console.error("elogin api call", process.env.BACKEND_URL_DEV);
+      
       // **Login Request**
       res = await axios.post(
         `${process.env.BACKEND_URL_DEV}/auth/app_login`,
