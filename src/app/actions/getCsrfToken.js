@@ -5,7 +5,8 @@ export const getCsrfToken = async () => {
   try {
     // Access the backend URL securely from environment variables
     const backendUrl = process.env.BACKEND_UAT_URL;
-
+    console.log("getbackendUrl", backendUrl);
+    
     // Perform the API call to get the CSRF token
     const res = await fetch(`${backendUrl}/api/csrf-token`, {
       method: "GET",
@@ -21,6 +22,8 @@ export const getCsrfToken = async () => {
 
     // Parse and return the CSRF token
     const data = await res.json();
+    console.log("data", data);
+    
     cookies().set({
       name: "cToken",
       value: `${data?.csrfToken}`,
