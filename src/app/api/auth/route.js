@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import axios from "axios";
 import csrf from "csrf";
 
+console.log("env process env", process.env);
 export const POST = async (req) => {
   try {
     console.log("login POST api process env", process.env);
