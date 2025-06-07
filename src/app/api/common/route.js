@@ -6,6 +6,8 @@ export const dynamic = "force-dynamic";
 
 export const GET = async (req) => {
   try {
+    console.log("login GET api process env", process.env);
+    console.log("login GET api req", req.headers);
     const csrfProtection = new csrf();
     const csrfToken = req.headers.get("csrf-token");
     const verified = csrfProtection.verify(process.env.CSRF_SECRET, csrfToken);
