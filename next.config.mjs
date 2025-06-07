@@ -25,7 +25,11 @@ const nextConfig = {
       },
     },
   },
-  output: "standalone",
+  // output: "standalone",
+  output: "export",
+  images: {
+    unoptimized: true,
+  },
   productionBrowserSourceMaps: false,
   modularizeImports: {
     "@mui/material": {
@@ -39,9 +43,9 @@ const nextConfig = {
     includePaths: [path.join(process.cwd(), "styles")],
   },
   webpack(config, { isServer }) {
-    if (isServer) {
-      execSync("node ./src/generateJson.js"); // This will run your script during the build
-    }
+    // if (isServer) {
+    //   execSync("node ./src/generateJson.js"); // This will run your script during the build
+    // }
 
     // Add jQuery
     config.plugins.push(
