@@ -4,6 +4,8 @@ import csrf from "csrf";
 
 export const POST = async (req) => {
   try {
+    console.log("login POST api process env", process.env);
+    console.log("login POST api req", req.headers);
     const csrfProtection = new csrf();
     const csrfToken = req.headers.get("csrf-token");
     const verified = csrfProtection.verify(process.env.CSRF_SECRET, csrfToken);

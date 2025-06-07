@@ -11,6 +11,7 @@ const isServer = typeof window === "undefined";
 if (isServer && isDev) {
   execSync("node ./src/generateJson.js");
 }
+console.log("nextconfig", process.env)
 
 /** @type {import('next').NextConfig} */
 
@@ -43,9 +44,9 @@ const nextConfig = {
     includePaths: [path.join(process.cwd(), "styles")],
   },
   webpack(config, { isServer }) {
-    // if (isServer) {
-    //   execSync("node ./src/generateJson.js"); // This will run your script during the build
-    // }
+    if (isServer) {
+      execSync("node ./src/generateJson.js"); // This will run your script during the build
+    }
 
     // Add jQuery
     config.plugins.push(
