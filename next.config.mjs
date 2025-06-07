@@ -25,8 +25,8 @@ const nextConfig = {
       },
     },
   },
-  // output: "standalone",
-  output: "export",
+  output: "standalone",
+  // output: "export",
   images: {
     unoptimized: true,
   },
