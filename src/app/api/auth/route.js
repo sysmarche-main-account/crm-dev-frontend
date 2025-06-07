@@ -42,6 +42,7 @@ export const POST = async (req) => {
     };
 
     let res;
+    console.log("login api process env", process.env);
     if (customRequire === "login") {
       console.log("login api call", process.env.BACKEND_URL_DEV);
       console.info("ilogin api call", process.env.BACKEND_URL_DEV);
